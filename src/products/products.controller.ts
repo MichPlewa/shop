@@ -12,6 +12,8 @@ import {
 } from '@nestjs/common';
 import { ProductsDataService } from './products-data.service';
 import { ExternalProductDto } from './dto/external-product.dto';
+import { Product } from './db/products.entity';
+import { dateToArray } from '../shared/helper/date.helper';
 
 @Controller('products')
 export class ProductsController {
@@ -24,5 +26,14 @@ export class ProductsController {
     return this.mapProductToExternal(
       await this.productRepository.getProductById(id),
     );
+  }
+
+  mapProductToExternal(product: Product): ExternalProductDto {
+    return {
+      ...product,
+      createdAt: dateToArray(product.createdAt),
+      updatedAt: dateToArray(product.updatedAt),
+      tags: product.tags.map((i) => i.name),
+    };
   }
 }

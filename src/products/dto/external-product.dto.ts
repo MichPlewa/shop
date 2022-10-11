@@ -1,7 +1,7 @@
 export interface ExternalProductDto {
     id: string;
     name: string;
-    omg: string;
+    img: string;
     price: number;
     count: number;
     tags: string[];
