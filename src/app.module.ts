@@ -1,13 +1,34 @@
-import { Module } from '@nestjs/common';
+import {
+  Module,
+  NestModule,
+  MiddlewareConsumer,
+  RequestMethod,
+} from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ProductsModule } from './products/products.module';
-import { OrdersModule } from './orders/orders.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConnectionOptions } from 'typeorm';
+import { OrdersModule } from './orders/orders.module';
+
+import config = require('./ormconfig');
+
+import * as cors from 'cors';
 
 @Module({
-  imports: [ProductsModule, OrdersModule],
+  imports: [
+    ProductsModule,
+    OrdersModule,
+    TypeOrmModule.forRoot(config as ConnectionOptions),
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule implements NestModule {
+  configure(consumer: MiddlewareConsumer): void {
+    consumer.apply(cors()).forRoutes({
+      path: '*',
+      method: RequestMethod.ALL,
+    });
+  }
+}
