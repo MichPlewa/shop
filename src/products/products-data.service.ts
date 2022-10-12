@@ -2,9 +2,9 @@ import { Injectable } from '@nestjs/common';
 import { Connection } from 'typeorm';
 import { EntityManager } from 'typeorm';
 import { ProductRepository } from './db/product.repository';
+import { TagRepository } from './db/tag.repository';
 import { Product } from './db/products.entity';
 import { Tag } from './db/tag.entity';
-import { TagRepository } from './db/tag.repository';
 import { ProductsQuery } from './queries/ProductsQuery.interface';
 import { CreateProductDTO } from './dto/create-product.dto';
 import { UpdateProductDTO } from './dto/update-product.dto';
@@ -15,8 +15,7 @@ export class ProductsDataService {
     private productRepository: ProductRepository,
     private tagRepository: TagRepository,
     private connection: Connection,
-  ) {
-  }
+  ) {}
   async addProduct(item: CreateProductDTO): Promise<Product> {
     return this.connection.transaction(async (manager: EntityManager) => {
       const tags: Tag[] = await this.tagRepository.findTagsByName(item.tags);
