@@ -13,6 +13,7 @@ import {
 import { ProductsDataService } from './products-data.service';
 import { ExternalProductDto } from './dto/external-product.dto';
 import { CreateProductDTO } from './dto/create-product.dto';
+import { UpdateProductDTO } from './dto/update-product.dto';
 import { Product } from './db/products.entity';
 import { ProductsQuery } from './queries/ProductsQuery.interface';
 import { dateToArray } from '../shared/helper/date.helper';
@@ -45,6 +46,22 @@ export class ProductsController {
   ): Promise<ExternalProductDto> {
     const product = await this.productRepository.addProduct(item);
     return this.mapProductToExternal(product);
+  }
+
+  @Put(':id')
+  async updateProduct(
+    @Param('id', new ParseUUIDPipe({ version: '4' })) id: string,
+    @Body() item: UpdateProductDTO,
+  ): Promise<ExternalProductDto> {
+    const product = await this.productRepository.updateProduct(id, item);
+    return this.mapProductToExternal(product);
+  }
+
+  @Delete(':id')
+  @HttpCode(204)
+  async deleteProduct(id: string): Promise<ExternalProductDto> {
+    await this.productRepository.deleteProduct(id);
+    return null;
   }
 
   mapProductToExternal(product: Product): ExternalProductDto {
