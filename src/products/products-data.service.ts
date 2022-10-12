@@ -15,8 +15,8 @@ export class ProductsDataService {
     private productRepository: ProductRepository,
     private tagRepository: TagRepository,
     private connection: Connection,
-  ) {}
-
+  ) {
+  }
   async addProduct(item: CreateProductDTO): Promise<Product> {
     return this.connection.transaction(async (manager: EntityManager) => {
       const tags: Tag[] = await this.tagRepository.findTagsByName(item.tags);
