@@ -49,15 +49,7 @@ export class Order {
   })
   state: Tag[];
 
-  @JoinTable({
-    name: 'orderedAddresses',
-    joinColumn: {
-      name: 'orderId',
-    },
-    inverseJoinColumn: {
-      name: 'addressId',
-    },
-  })
+  @Column({ type: 'text' })
   address: string;
 
   @Column({ type: 'float' })
