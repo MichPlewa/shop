@@ -4,10 +4,12 @@ import Order from './components/Pages/Order/Order';
 import Home from './components/Pages/Home/Home';
 import Product from './components/Pages/Product/Product';
 import Cart from './components/Pages/Cart/Cart';
+import Nav from './components/views/Navbar/Navbar';
 
 function App() {
   return (
     <main>
+      <Nav />
       <Container>
         <Routes>
           <Route path="/" element={<Home />} />
