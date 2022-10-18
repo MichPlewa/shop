@@ -3,14 +3,14 @@ import thunk from 'redux-thunk';
 import initialState from './initialState';
 import productReducer from './productRedux';
 import orderReducer from './orderRedux';
-import configurateStore from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 
 // combine reducers
 const subreducers = { product: productReducer, order: orderReducer };
 
 const reducer = combineReducers(subreducers);
 
-const store = configurateStore(
+const store = createStore(
   reducer,
   initialState,
   compose(
