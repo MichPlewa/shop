@@ -9,7 +9,7 @@ import {
 
 import { Tag } from './tag.entity';
 
-@Entity({ name: 'products' })
+@Entity('products')
 export class Product {
   @PrimaryGeneratedColumn('uuid')
   id: string;

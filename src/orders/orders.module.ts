@@ -3,12 +3,12 @@ import { OrdersController } from './orders.controller';
 import { OrdersDataService } from './orders-data.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { OrderRepository } from './db/orders.repository';
-import { ProductRepository } from '../products/db/product.repository';
+// import { ProductRepository } from '../products/db/product.repository';
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([OrderRepository]),
-    TypeOrmModule.forFeature([ProductRepository]),
+    // TypeOrmModule.forFeature([ProductRepository]),
   ],
 
   controllers: [OrdersController],

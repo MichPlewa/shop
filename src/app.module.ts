@@ -6,7 +6,7 @@ import {
 } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ProductsModule } from './products/products.module';
+// import { ProductsModule } from './products/products.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConnectionOptions } from 'typeorm';
 import { OrdersModule } from './orders/orders.module';
@@ -17,7 +17,7 @@ import * as cors from 'cors';
 
 @Module({
   imports: [
-    ProductsModule,
+    // ProductsModule,
     OrdersModule,
     TypeOrmModule.forRoot(config as ConnectionOptions),
   ],

@@ -12,7 +12,7 @@ import { UpdateOrderDTO } from './dto/update-order.dto';
 export class OrdersDataService {
   constructor(
     private ordersRepository: OrderRepository,
-    private productRepository: ProductRepository,
+    // private productRepository: ProductRepository,
     private connection: Connection,
   ) {}
 
@@ -39,18 +39,18 @@ export class OrdersDataService {
       orderToSave.address = order.address;
       orderToSave.orderItems = [];
 
-      for (const orderItem of order.orderItems) {
-        const product = await this.productRepository.findOne(orderItem.product);
-        orderToSave.orderItems.push({
-          id: uuidv4(),
-          product: product,
-          quantity: orderItem.quantity,
-          orderId: orderItem.orderId,
-          price: orderItem.price,
-          createdAt: orderItem.createdAt,
-          updatedAt: orderItem.updatedAt,
-        });
-      }
+      // for (const orderItem of order.orderItems) {
+      //   // const product = await this.productRepository.findOne(orderItem.product);
+      //   orderToSave.orderItems.push({
+      //     id: uuidv4(),
+      //     // product: product,
+      //     quantity: orderItem.quantity,
+      //     orderId: orderItem.orderId,
+      //     price: orderItem.price,
+      //     createdAt: orderItem.createdAt,
+      //     updatedAt: orderItem.updatedAt,
+      //   });
+      // }
 
       return await manager
         .getCustomRepository(OrderRepository)
