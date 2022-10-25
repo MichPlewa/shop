@@ -1,7 +1,6 @@
-
 ## Description
 
-E-commerce fullstack applicaiton. Live demo on heroku [https://shoe-jk.herokuapp.com/](https://shoe-jk.herokuapp.com/)
+
 
 ## Installation
 
@@ -37,10 +36,4 @@ $ npm run test:cov
 
 ## Stay in touch
 
-- Author - [Jakub Kozik](https://www.linkedin.com/in/kozik-jakub/)
-- Portfolio - [https://jacob-dev.netlify.app/](https://jacob-dev.netlify.app/)
-
-
-
-
-
+- Author - [Michał Plewa](https://www.linkedin.com/in/michplewa/)
