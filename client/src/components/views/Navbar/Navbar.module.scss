@@ -1,0 +1,44 @@
+@import '../../../styles/settings.scss';
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+.search {
+  color: $white;
+}
+
+/* Style the links inside the navigation bar */
+.topnav div {
+  color: $white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a {
+  color: $white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  color: $white;
+}
+
+.form {
+  width: 50%;
+}
+
+.img {
+  height: 800px;
+}
+
+@media only screen and (max-width: 600px) {
+  .img {
+    height: 400px;
+  }
+}
