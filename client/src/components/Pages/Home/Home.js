@@ -15,6 +15,12 @@ const Home = () => {
   console.log(products);
   return (
     <div className={styles.home}>
+      <div>
+        <img
+          className={`col-12 ${styles.img}`}
+          src="../../../uploads/dice-ranking-list-featured.png"
+        />
+      </div>
       <Halo />
     </div>
   );

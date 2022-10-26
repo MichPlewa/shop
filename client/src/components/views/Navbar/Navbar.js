@@ -4,11 +4,12 @@ const Nav = () => {
   return (
     <div>
       <div className={`row ${styles.topnav}`}>
-        <div className="col-2">
+        <div className="col-1">
           <a href="/">DiceMania</a>
         </div>
-        <div className="col-8">
-          <input type="text" className={styles.form} placeholder="Search" />
+        <div className="col-8"></div>
+        <div className="col-1">
+          <a href="login">Login</a>
         </div>
         <div className="col-1">
           <a href="products">Products</a>
@@ -18,12 +19,6 @@ const Nav = () => {
             Cart
           </a>
         </div>
-      </div>
-      <div className={styles.intro}>
-        <img
-          className={`col-12 ${styles.img}`}
-          src="../../../uploads/dice-ranking-list-featured.png"
-        />
       </div>
     </div>
   );
