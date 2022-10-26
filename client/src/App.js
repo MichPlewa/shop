@@ -8,6 +8,7 @@ import Nav from './components/views/Navbar/Navbar';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { API_URL } from './config';
+import Login from './components/Pages/Login/Login';
 function App() {
   return (
     <main>
@@ -18,6 +19,7 @@ function App() {
           <Route path="/order" element={<Order />} />
           <Route path="/product" element={<Product />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </Container>
     </main>
