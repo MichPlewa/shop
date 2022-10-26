@@ -27,9 +27,6 @@ export class ProductEntity {
   price: number;
 
   @Column()
-  topSale: boolean;
-
-  @Column()
   image: string;
 
   @Column()

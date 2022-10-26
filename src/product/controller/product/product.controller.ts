@@ -34,7 +34,7 @@ export class ProductsController {
     return await this.productsService.getOne(id);
   }
 
-  @UseGuards(JwtAuthGuard)
+  // @UseGuards(JwtAuthGuard)
   @Post()
   async Create(@Body() item: CreateProductDTO): Promise<ExternalProductDTO> {
     const product = await this.productsService.create(item);
