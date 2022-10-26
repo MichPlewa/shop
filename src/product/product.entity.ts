@@ -21,9 +21,6 @@ export class ProductEntity {
   quantity: number;
 
   @Column()
-  type: string;
-
-  @Column()
   category: string;
 
   @Column()

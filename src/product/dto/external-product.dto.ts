@@ -2,7 +2,6 @@ export interface ExternalProductDTO {
   id: string;
   name: string;
   quantity: number;
-  type: string;
   category: string;
   price: number;
   onSale: boolean;
